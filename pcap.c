@@ -43,7 +43,7 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header,
     printf("Src Port: %d\n", ntohs(tcp->tcp_sport));
     printf("Dst Port: %d\n", ntohs(tcp->tcp_dport));
 
-    // HTTP Payload
+    // HTTP Message
     int data_offset = sizeof(struct ethheader) + ip_header_len + tcp_header_len;
 
     int data_len = header->caplen - data_offset;
