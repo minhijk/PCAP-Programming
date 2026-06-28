@@ -78,7 +78,7 @@ int main()
     // Step 1: Open live pcap session on NIC with name enp0s3
     handle = pcap_open_live("enp0s3", BUFSIZ, 1, 1000, errbuf);
 
-    // Step 2: Compile filter_exp into BPF psuedo-code
+    // Step 2: Compile filter_exp into BPF pseudo-code
     pcap_compile(handle, &fp, filter_exp, 0, net);
     if (pcap_setfilter(handle, &fp) != 0) {
         pcap_perror(handle, "Error:");
